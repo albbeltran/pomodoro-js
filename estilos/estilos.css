@@ -13,38 +13,97 @@
 }
 
 * body .container {
+  width: 46.87em;
   margin: 3em auto;
+  text-align: center;
+}
+
+* body .container .title {
+  font-size: 3.5em;
+  margin-bottom: 1em;
+}
+
+* body .container .subtitle {
+  font-size: 2em;
+  margin-bottom: 1em;
+}
+
+* body .container .containerForm form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+* body .container .containerForm form .containerInput {
+  width: 20em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 1em;
+}
+
+* body .container .containerForm form .containerInput .labelTime {
+  width: 30%;
+  font-size: 1.10em;
+}
+
+* body .container .containerForm form .containerInput input[type="text"] {
+  width: 67.5%;
+  padding: 0.30em;
+  border-radius: 2%;
+  border: none;
+  border: 3px solid transparent;
+  font-size: 16px;
+}
+
+* body .container .containerForm form .containerInput input[type="text"]:focus {
+  outline: none;
+  border: 3px solid #ffe46b;
+}
+
+* body .container .containerPomodoro {
+  margin: 3em auto;
+  margin-top: 1.5em;
   width: 31.25em;
   text-align: center;
   background-color: rgba(255, 255, 255, 0.15);
   padding: 2em;
 }
 
-* body .container .title {
+* body .container .containerPomodoro .work,
+* body .container .containerPomodoro .break {
+  color: #ffe46b;
   font-size: 2em;
-  margin-bottom: 3em;
-  display: none;
 }
 
-* body .container .subtitle, * body .container .work {
-  color: #ffe46b;
-}
-
-* body .container .break {
-  color: #ffe46b;
-}
-
-* body .container .containerTime {
+* body .container .containerPomodoro .containerTime {
   margin: 2em auto;
 }
 
-* body .container .containerTime .timing {
+* body .container .containerPomodoro .containerTime .timing {
   font-size: 6.25em;
   font-weight: bold;
   color: #f2f2f2;
 }
 
-* body .container .btn {
+* body .container .containerPomodoro .btn {
   font-weight: bold;
   padding: 1em 3em;
   font-size: 16px;
@@ -52,5 +111,9 @@
   background-color: #f2f2f2;
   color: #d95550;
   cursor: pointer;
+}
+
+* body .container .containerPomodoro audio {
+  display: none;
 }
 /*# sourceMappingURL=estilos.css.map */

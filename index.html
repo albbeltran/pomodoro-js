@@ -10,14 +10,30 @@
 <body>
     <div class="container" id="container">
         <h1 class="title" id="title">POMODORO</h1>
-        <h2 class="subtitle" id="subtitle">WORK TIME!</h2>
-        <div class="containerTime">
-            <p class="timing" id="timing">00 : 00</p>
+        <h3 class="subtitle">Select your time</h3>
+        <div class="containerForm">
+            <form class="form" id="form">
+                <div class="containerInput">
+                    <label for="workTime" class="labelTime">Focus time:</label>
+                    <input type="text" name="workTime" class="inputTime" id="workTime" placeholder="Minutes...">
+                </div>
+                <div class="containerInput">
+                    <label for="breakTime" class="labelTime">Break time:</label>
+                    <input type="text" name="breakTime" class="inputTime" id="breakTime" placeholder="Minutes...">
+                </div>
+            </form>
         </div>
 
-        <button class="btn pause" id="btnPause">PAUSE</button>
-
-        <audio src="../media/hyperfun.mp3" id="audio"></audio>
+        <div class="containerPomodoro" id="containerPomodoro">
+            <h2 class="work" id="subtitle">FOCUS TIME!</h2>
+            <div class="containerTime">
+                <p class="timing" id="timing">00 : 00</p>
+            </div>
+    
+            <button class="btn pause" id="btnPause">PAUSE</button>
+    
+            <audio src="../media/hyperfun.mp3" id="audio"></audio>
+        </div>
     </div>
 
     <script src="index.js"></script>
