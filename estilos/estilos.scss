@@ -90,8 +90,12 @@ $white-gray: #f2f2f2;
                 text-align: center;
                 background-color: rgba(255, 255, 255, 0.15);
                 padding: 2em;
+
+                .focus{
+                    color:$secondaryColor;
+                    font-size: 2em;
+                }
     
-                .work,
                 .break{
                     color:$secondaryColor;
                     font-size: 2em;
@@ -106,11 +110,23 @@ $white-gray: #f2f2f2;
                         color: $white-gray;
                     }
                 }
-    
-                .btn-pause{
-                    @extend .btn;
+                
+                .containerButton{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    width: 19em;
+                    margin: 0 auto;
+
+                    .btn-pause{
+                        @extend .btn;
+                    }
+
+                    .btn-stop{
+                        @extend .btn;
+                    }
                 }
-    
+        
                 audio{
                     display: none;
                 }

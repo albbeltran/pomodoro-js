@@ -15,11 +15,11 @@
             <form class="form" id="form">
                 <div class="containerInput">
                     <label for="focusTime" class="labelTime">Focus time:</label>
-                    <input type="text" name="focusTime" class="inputTime" id="inputFocus" placeholder="Minutes...">
+                    <input type="text" name="focusTime" class="inputTime" id="inputFocus" placeholder="Minutes..." onkeypress="return onlyNumbers(event)">
                 </div>
                 <div class="containerInput">
                     <label for="breakTime" class="labelTime">Break time:</label>
-                    <input type="text" name="breakTime" class="inputTime" id="inputBreak" placeholder="Minutes...">
+                    <input type="text" name="breakTime" class="inputTime" id="inputBreak" placeholder="Minutes..." onkeypress="return onlyNumbers(event)">
                 </div>
             </form>
 
@@ -28,13 +28,16 @@
         </div>
 
         <div class="containerPomodoro" id="containerPomodoro">
-            <h2 class="work" id="subtitle">FOCUS TIME!</h2>
+            <h2 class="focus" id="subtitle">FOCUS TIME!</h2>
             <div class="containerTime">
                 <p class="timing" id="timing">00 : 00</p>
             </div>
-    
-            <button class="btn-pause" id="btnPause">PAUSE</button>
-    
+
+            <div class="containerButton">
+                <button class="btn-pause" id="btnPause">PAUSE</button>
+                <button class="btn-stop" id="btnStop">STOP</button>    
+            </div>
+
             <audio src="../media/hyperfun.mp3" id="audio"></audio>
         </div>
     </div>
