@@ -10,6 +10,11 @@
     let audio = document.getElementById('audio');
     let btnStart = document.getElementById('btnStart');
     let btnStop = document.getElementById('btnStop');
+    let containerPomodoro = document.getElementById('containerPomodoro');
+    let containerForm = document.getElementById('containerForm');
+
+    validStop = true;
+    showHide(validStop);
 
     function onlyNumbers(e){
         key=e.keyCode || e.which;
@@ -29,30 +34,49 @@
         }
     }
 
-    btnStart.addEventListener('click',function(){
-        let startPomodoro = false;
-        limitFocus = document.getElementById('inputFocus').value;
-        limitBreak = document.getElementById('inputBreak').value;
-
-        if(limitFocus == 0 || limitBreak == 0){
-            alert('Please digit a correct time');
-            startPomodoro = false;
+    function showHide(validStop){
+        if(validStop == true){
+            formAction();
         }
-        else{
-            if((limitBreak > limitFocus)||(limitBreak == limitFocus)){
-                alert('The focus time must be greather than the break one!')
-                startPomodoro=false;
+        else if(validStop == false){
+            containerPomodoro.style.display = 'block';
+            containerForm.style.display = 'none';
+        }
+    }
+
+
+    function formAction(){
+        containerPomodoro.style.display = 'none';
+        containerForm.style.display = 'block';
+    
+        btnStart.addEventListener('click',function(){
+            let startPomodoro = false;
+            limitFocus = document.getElementById('inputFocus').value;
+            limitBreak = document.getElementById('inputBreak').value;
+    
+            if(limitFocus == 0 || limitBreak == 0){
+                alert('Please digit a correct time');
+                startPomodoro = false;
             }
             else{
-                startPomodoro=true;
+                if((limitBreak > limitFocus)||(limitBreak == limitFocus)){
+                    alert('The focus time must be greather than the break one!')
+                    startPomodoro=false;
+                }
+                else{
+                    startPomodoro=true;
+                }
             }
-        }
+    
+            if(startPomodoro==true){
+                validStop = false;
+                showHide(validStop);
 
-        if(startPomodoro==true){
-            limit = limitFocus;
-            pomodoro(limitFocus, limitBreak, limit);
-        }
-    });
+                limit = limitFocus;
+                pomodoro(limitFocus, limitBreak, limit);
+            }
+        });
+    }
 
     function pomodoro(limitFocus, limitBreak){
         btnPause.addEventListener('click',pauseTiming);
@@ -77,6 +101,10 @@
         }
     
         function timingFunction(){
+            if(btnStop.addEventListener('click',function(){
+                validStop = true;
+                showHide(validStop);
+            }));
     
             secondCounter++;
     

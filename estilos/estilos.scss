@@ -35,12 +35,12 @@ $white-gray: #f2f2f2;
                 display: none;
             }
 
-            .subtitle{
-                font-size: 2em;
-                margin-bottom: 1em;
-            }
-
             .containerForm{
+                .subtitle{
+                    font-size: 2em;
+                    margin-bottom: 1em;
+                }
+                
                 form{
                     display: flex;
                     flex-direction: column;
