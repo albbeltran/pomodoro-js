@@ -30,27 +30,14 @@
     }
 
     btnStart.addEventListener('click',function(){
-        let startPomodoro = false;
-        limitFocus = document.getElementById('inputFocus').value;
-        limitBreak = document.getElementById('inputBreak').value;
+        limitFocus = parseFloat(document.getElementById('inputFocus').value);
+        limitBreak = parseFloat(document.getElementById('inputBreak').value);
 
-        if(limitFocus == 0 || limitBreak == 0){
-            alert('Please digit a correct time');
-            startPomodoro = false;
+        if((limitBreak > limitFocus)||(limitBreak == limitFocus)){
+            alert('The focus time must be greather than the break one!')
         }
         else{
-            if((limitBreak > limitFocus)||(limitBreak == limitFocus)){
-                alert('The focus time must be greather than the break one!')
-                startPomodoro=false;
-            }
-            else{
-                startPomodoro=true;
-            }
-        }
-
-        if(startPomodoro==true){
-            limit = limitFocus;
-            pomodoro(limitFocus, limitBreak, limit);
+            alert('I am working!');
         }
     });
 
