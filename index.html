@@ -14,14 +14,16 @@
         <div class="containerForm">
             <form class="form" id="form">
                 <div class="containerInput">
-                    <label for="workTime" class="labelTime">Focus time:</label>
-                    <input type="text" name="workTime" class="inputTime" id="workTime" placeholder="Minutes...">
+                    <label for="focusTime" class="labelTime">Focus time:</label>
+                    <input type="text" name="focusTime" class="inputTime" id="inputFocus" placeholder="Minutes...">
                 </div>
                 <div class="containerInput">
                     <label for="breakTime" class="labelTime">Break time:</label>
-                    <input type="text" name="breakTime" class="inputTime" id="breakTime" placeholder="Minutes...">
+                    <input type="text" name="breakTime" class="inputTime" id="inputBreak" placeholder="Minutes...">
                 </div>
             </form>
+
+            <button class="btn-start" id="btnStart">Start to work!</button>
         </div>
 
         <div class="containerPomodoro" id="containerPomodoro">
@@ -30,7 +32,7 @@
                 <p class="timing" id="timing">00 : 00</p>
             </div>
     
-            <button class="btn pause" id="btnPause">PAUSE</button>
+            <button class="btn-pause" id="btnPause">PAUSE</button>
     
             <audio src="../media/hyperfun.mp3" id="audio"></audio>
         </div>

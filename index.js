@@ -6,6 +6,10 @@
     let subtitle = document.getElementById('subtitle');
     let btnPause = document.getElementById('btnPause');
     let audio = document.getElementById('audio');
+    let inputFocus = parseFloat(document.getElementById('inputFocus').value);
+    let inputBreak = parseFloat(document.getElementById('inputBreak').value);
+
+    // inputFocus.content
 
     limit = 25;
     btnPause.addEventListener('click',pauseTiming);
@@ -72,8 +76,6 @@
                     timing.innerHTML = '0'+minuteCounter+':0'+secondCounter;
                 }
             }
-
-            // console.log('MINUTES: '+minuteCounter+' SECONDS: '+secondCounter);
         }
     }
 
