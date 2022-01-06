@@ -7,7 +7,7 @@
     let timing = document.getElementById('timing');
     let subtitle = document.getElementById('subtitle');
     let btnPause = document.getElementById('btnPause');
-    let audio = document.getElementById('audio');
+    // let audio = document.getElementById('audio');
     let btnStart = document.getElementById('btnStart');
     let btnStop = document.getElementById('btnStop');
     let containerPomodoro = document.getElementById('containerPomodoro');
@@ -46,11 +46,12 @@
 
 
     function formAction(){
+        let startPomodoro = false;
+        
         containerPomodoro.style.display = 'none';
         containerForm.style.display = 'block';
     
         btnStart.addEventListener('click',function(){
-            let startPomodoro = false;
             limitFocus = document.getElementById('inputFocus').value;
             limitBreak = document.getElementById('inputBreak').value;
     
@@ -89,7 +90,7 @@
                 btnPause.innerHTML = 'CONTINUE';
                 clearInterval(counter);
                 validate=true;
-                audio.play();
+                // audio.play();
             }
             else if(validate==true){
                 //CONTINUE
