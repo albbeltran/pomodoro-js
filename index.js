@@ -1,6 +1,5 @@
 // (function(){
-    let secondCounter = 0;
-    let minuteCounter = 0;
+    let counter = 0;
     let limit = 0;
     let limitFocus = 0;
     let limitBreak = 0;
@@ -12,9 +11,6 @@
     let btnStop = document.getElementById('btnStop');
     let containerPomodoro = document.getElementById('containerPomodoro');
     let containerForm = document.getElementById('containerForm');
-
-    validStop = true;
-    showHide(validStop);
 
     function onlyNumbers(e){
         key=e.keyCode || e.which;
@@ -34,24 +30,18 @@
         }
     }
 
-    function showHide(validStop){
-        if(validStop == true){
-            formAction();
-        }
-        else if(validStop == false){
-            containerPomodoro.style.display = 'block';
-            containerForm.style.display = 'none';
-        }
-    }
+    form();
 
 
-    function formAction(){
-        let startPomodoro = false;
-        
+    function form(){
         containerPomodoro.style.display = 'none';
         containerForm.style.display = 'block';
+
+        let startPomodoro = false;
     
         btnStart.addEventListener('click',function(){
+            limitFocus, limitBreak = 0;
+
             limitFocus = parseFloat(document.getElementById('inputFocus').value);
             limitBreak = parseFloat(document.getElementById('inputBreak').value);
     
@@ -70,16 +60,20 @@
             }
     
             if(startPomodoro==true){
-                validStop = false;
-                showHide(validStop);
-
                 limit = limitFocus;
                 pomodoro(limitFocus, limitBreak, limit);
             }
         });
     }
 
-    function pomodoro(limitFocus, limitBreak){
+    function pomodoro(limitFocus, limitBreak, limit){
+        clearInterval(counter);
+        let secondCounter = 0;
+        let minuteCounter = 0;
+
+        containerForm.style.display = 'none';
+        containerPomodoro.style.display = 'block';
+
         btnPause.addEventListener('click',pauseTiming);
         counter = setInterval(timingFunction,1000);
         let validate = false;
@@ -102,11 +96,6 @@
         }
     
         function timingFunction(){
-            if(btnStop.addEventListener('click',function(){
-                validStop = true;
-                showHide(validStop);
-            }));
-    
             secondCounter++;
     
             if(minuteCounter==limit){
@@ -149,6 +138,10 @@
                     }
                 }
             }
+
+            if(btnStop.addEventListener('click',function(){
+                form();
+            }));
         }
     
         function changeLimit(){
@@ -168,7 +161,6 @@
             secondCounter=0;
             subtitle.innerHTML = 'FOCUS TIME!'
             subtitle.className = 'focus';
-            // body.className = 'workBackground';
         }
     
         function breakFunction(){
