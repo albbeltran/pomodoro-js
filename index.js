@@ -6,10 +6,13 @@
     let subtitle = document.getElementById('subtitle');
     let btnPause = document.getElementById('btnPause');
     let audio = document.getElementById('audio');
-    let inputFocus = parseFloat(document.getElementById('inputFocus').value);
-    let inputBreak = parseFloat(document.getElementById('inputBreak').value);
+    let btnStart = document.getElementById('btnStart');
 
-    // inputFocus.content
+    btnStart.addEventListener('click',function(){
+        // let inputFocus = parseFloat(document.getElementById('inputFocus').value);
+        // let inputBreak = parseFloat(document.getElementById('inputBreak').value);
+        validForm();
+    });
 
     limit = 25;
     btnPause.addEventListener('click',pauseTiming);
@@ -104,5 +107,11 @@
         secondCounter=0;
         subtitle.innerHTML = 'BREAK!'
         subtitle.className = 'break';
+    }
+
+    function validForm(){
+        if((document.getElementById('inputFocus').value=='')||(document.getElementById('inputBreak').value=='')){
+            alert('Please digit a number');
+        }
     }
 // });
