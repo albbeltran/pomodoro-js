@@ -34,8 +34,8 @@
 
 
     function form(){
-        // containerPomodoro.style.display = 'none';
-        // containerForm.style.display = 'block';
+        containerPomodoro.style.display = 'none';
+        containerForm.style.display = 'block';
 
         let startPomodoro = false;
     
@@ -61,13 +61,10 @@
     
             if(startPomodoro==true){
                 limit = limitFocus;
-                // pomodoro(limitFocus, limitBreak, limit);
+                pomodoro(limitFocus, limitBreak, limit);
             }
         });
     }
-    limitFocus=10;
-    limitBreak=10;
-    pomodoro(limitFocus, limitBreak, limit);
 
     function pomodoro(limitFocus, limitBreak, limit){
         clearInterval(counter);
