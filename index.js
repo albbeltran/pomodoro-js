@@ -34,8 +34,8 @@
 
 
     function form(){
-        containerPomodoro.style.display = 'none';
-        containerForm.style.display = 'block';
+        // containerPomodoro.style.display = 'none';
+        // containerForm.style.display = 'block';
 
         let startPomodoro = false;
     
@@ -61,10 +61,13 @@
     
             if(startPomodoro==true){
                 limit = limitFocus;
-                pomodoro(limitFocus, limitBreak, limit);
+                // pomodoro(limitFocus, limitBreak, limit);
             }
         });
     }
+    limitFocus=10;
+    limitBreak=10;
+    pomodoro(limitFocus, limitBreak, limit);
 
     function pomodoro(limitFocus, limitBreak, limit){
         clearInterval(counter);
@@ -82,6 +85,7 @@
             if(validate==false){
                 //PAUSE
                 btnPause.innerHTML = 'CONTINUE';
+                btnPause.style.padding = '1em 2.0875em'
                 clearInterval(counter);
                 validate=true;
                 // audio.play();
@@ -91,6 +95,7 @@
                 validate = false;
                 
                 btnPause.innerHTML = 'PAUSE';
+                btnPause.style.padding = '1em 3em'
                 counter = setInterval(timingFunction,1000);
             }
         }
