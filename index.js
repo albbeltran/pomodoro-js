@@ -7,9 +7,14 @@
     let timing = document.getElementById('timing');
     let subtitle = document.getElementById('subtitle');
     let btnPause = document.getElementById('btnPause');
-    let audio = document.getElementById('audio');
+    // let audio = document.getElementById('audio');
     let btnStart = document.getElementById('btnStart');
     let btnStop = document.getElementById('btnStop');
+    let containerPomodoro = document.getElementById('containerPomodoro');
+    let containerForm = document.getElementById('containerForm');
+
+    validStop = true;
+    showHide(validStop);
 
     function onlyNumbers(e){
         key=e.keyCode || e.which;
@@ -29,17 +34,50 @@
         }
     }
 
-    btnStart.addEventListener('click',function(){
-        limitFocus = parseFloat(document.getElementById('inputFocus').value);
-        limitBreak = parseFloat(document.getElementById('inputBreak').value);
+    function showHide(validStop){
+        if(validStop == true){
+            formAction();
+        }
+        else if(validStop == false){
+            containerPomodoro.style.display = 'block';
+            containerForm.style.display = 'none';
+        }
+    }
 
-        if((limitBreak > limitFocus)||(limitBreak == limitFocus)){
-            alert('The focus time must be greather than the break one!')
-        }
-        else{
-            alert('I am working!');
-        }
-    });
+
+    function formAction(){
+        let startPomodoro = false;
+        
+        containerPomodoro.style.display = 'none';
+        containerForm.style.display = 'block';
+    
+        btnStart.addEventListener('click',function(){
+            limitFocus = parseFloat(document.getElementById('inputFocus').value);
+            limitBreak = parseFloat(document.getElementById('inputBreak').value);
+    
+            if(document.getElementById('inputFocus').value == 0 || document.getElementById('inputBreak').value == 0){
+                alert('Please digit a correct time');
+                startPomodoro = false;
+            }
+            else{
+                if((limitBreak > limitFocus)||(limitBreak == limitFocus)){
+                    alert('The focus time must be greather than the break one!')
+                    startPomodoro=false;
+                }
+                else{
+                    startPomodoro=true;
+                }
+            }
+    
+            if(startPomodoro==true){
+                validStop = false;
+                showHide(validStop);
+
+                limit = limitFocus;
+                pomodoro(limitFocus, limitBreak, limit);
+            }
+        });
+    }
 
     function pomodoro(limitFocus, limitBreak){
         btnPause.addEventListener('click',pauseTiming);
@@ -52,7 +90,7 @@
                 btnPause.innerHTML = 'CONTINUE';
                 clearInterval(counter);
                 validate=true;
-                audio.play();
+                // audio.play();
             }
             else if(validate==true){
                 //CONTINUE
@@ -64,6 +102,10 @@
         }
     
         function timingFunction(){
+            if(btnStop.addEventListener('click',function(){
+                validStop = true;
+                showHide(validStop);
+            }));
     
             secondCounter++;
     

@@ -34,7 +34,7 @@
   display: none;
 }
 
-* body .container .subtitle {
+* body .container .containerForm .subtitle {
   font-size: 2em;
   margin-bottom: 1em;
 }
