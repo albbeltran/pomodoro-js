@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+* body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  background-color: #d95550;
+}
+
+* body .container {
+  margin: 3em auto;
+  width: 31.25em;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.15);
+  padding: 2em;
+}
+
+* body .container .title {
+  font-size: 2em;
+  margin-bottom: 3em;
+  display: none;
+}
+
+* body .container .subtitle, * body .container .work {
+  color: #ffe46b;
+}
+
+* body .container .break {
+  color: #ffe46b;
+}
+
+* body .container .containerTime {
+  margin: 2em auto;
+}
+
+* body .container .containerTime .timing {
+  font-size: 6.25em;
+  font-weight: bold;
+  color: #f2f2f2;
+}
+
+* body .container .btn {
+  font-weight: bold;
+  padding: 1em 3em;
+  font-size: 16px;
+  border: none;
+  background-color: #f2f2f2;
+  color: #d95550;
+  cursor: pointer;
+}
+/*# sourceMappingURL=estilos.css.map */

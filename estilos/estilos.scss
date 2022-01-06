@@ -1,0 +1,65 @@
+$primaryColor: rgb(217, 85, 80);
+$secondaryColor: rgb(255, 228, 107);
+$white-gray: #f2f2f2;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+        background-color: $primaryColor;
+    
+        .container{
+            // background-color: lightgreen;
+            margin: 3em auto;
+            width: 31.25em;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.15);
+            padding: 2em;
+
+            .title{
+                font-size: 2em;
+                margin-bottom: 3em;
+                display: none;
+            }
+
+            .subtitle, .work{
+                color:$secondaryColor;
+            }
+
+            .break{
+                color:$secondaryColor;
+            }
+
+            .containerTime{
+                margin: 2em auto;
+
+                .timing{
+                    font-size: 6.25em;
+                    font-weight: bold;
+                    color: $white-gray;
+                }
+            }
+
+            .btn{
+                // display: inline-block;
+                font-weight: bold;
+                padding: 1em 3em;
+                font-size: 16px;
+                border: none;
+                background-color: $white-gray;
+                color:$primaryColor;
+                cursor: pointer;
+            }
+
+            audio{
+                display: none;
+            }
+        }
+    }
+}
